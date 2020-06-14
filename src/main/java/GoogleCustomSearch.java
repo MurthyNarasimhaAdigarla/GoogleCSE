@@ -38,10 +38,10 @@ public class GoogleCustomSearch {
 
     public static void parsing_the_json() {
 
-        JSONObject get_ProdStatus = new JSONObject(resp);
+        JSONObject items_List = new JSONObject(resp);
         for (int i = 0; i < 3; i++) {
-            JSONObject all_Items = get_ProdStatus.getJSONArray("items").getJSONObject(i);
-            System.out.println("Link no :" + i + " is " + all_Items.get("displayLink"));
+            JSONObject all_Items = items_List.getJSONArray("items").getJSONObject(i);
+            System.out.println("Search result " + i + " is :" + all_Items.get("displayLink"));
         }
 
 
